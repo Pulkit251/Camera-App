@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+        }
+
+        .box-1{
+            margin: auto;
+            margin-top: calc((100vh - 15rem) / 2);
+            height: 15rem;
+            width: 15rem;
+            background-color: yellow;
+            animation: scale 2s infinite;
+            /* animation-fill-mode: forwards;   stops the element at the last position*/
+        }
+
+        .box-2{
+            height: 10rem;
+            width: 10rem;
+            border-radius: 50%;
+            position: fixed;
+            background-color: red;
+            top: 50%;
+            left: 50%;
+            animation: fader 1s infinite;
+            /* transform - bring the box into the centre by moving it backwards and upwards 50%*/
+            transform: translate(-50%,-50%);
+        }
+
+        /* increases or decreases the size of the elements */
+        @keyframes scale{
+            0%{
+                transform: scale(1);
+                border-radius: 0%;
+            }
+
+            50%{
+                transform: scale(1.5);
+                border-radius: 50%;
+            }
+
+            100%{
+                transform: scale(1);
+                border-radius: 0%;
+            }
+            
+        }
+
+        /* fades the element */
+        @keyframes fader {
+                0%{
+                    opacity: 1;
+                }
+                
+                50%{
+                    opacity: 0;
+                }
+
+                100%{
+                    opacity: 1;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="box-1"></div>
+    <div class="box-2"></div>
+</body>
+</html>
